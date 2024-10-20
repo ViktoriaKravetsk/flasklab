@@ -1,15 +1,15 @@
-from flask import Flask, request, redirect, url_for
+from flask import Flask, request, redirect, url_for, render_template
 
 app = Flask(__name__)
-app.config.from_pyfile("config.py")
+
 @app.route('/')
 def hello():
-    return "Hello, World!", 200
+    return render_template("hello.html")
 
 @app.route('/homepage')
 def homepage():
-    agent = request.user_agent
-    return f"Welcome to the homepage! - {agent}"
+    agent = request.user_agent.string
+    return render_template("home.html", agent=agent)
 
 @app.route("/hi/<string:name>")
 def greetings(name):
@@ -24,5 +24,5 @@ def admin():
     print(to_url)
     return redirect(to_url)
 
-if __name__ == '__main__':  # Змінено name на __name__
+if __name__ == '__main__':
     app.run(debug=True)
