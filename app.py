@@ -54,5 +54,9 @@ def detail_post(id):
     return render_template("detail_post.html", post=post)
 
 
+@app.route('/resume')
+def resume():
+    return render_template('resume.html', title="Резюме Вікторії Кравецької")
+
 if __name__ == "__main__":
-    app.run()  # Launch built-in web server and run this Flask webapp, debug=True
+    app.run()

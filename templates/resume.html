@@ -1,0 +1,39 @@
+{% extends "base1.html" %}
+
+{% block title %}Резюме Вікторії Кравецької{% endblock %}
+
+{% block header %}Резюме Вікторії Кравецької{% endblock %}
+
+{% block content %}
+<section id="about">
+    <h2>Про себе</h2>
+    <img src="{{ url_for('static', filename='images/cat.jpg') }}" alt="Моє фото" style="max-width: 150px; height: auto; border-radius: 50%;">
+
+    <p>Я - Кравецька Вікторія</p>
+</section>
+
+<section id="education">
+    <h2>Освіта</h2>
+    <ul>
+        <li>Прикарпатський національний університет імені Василя Стефаника</li>
+    </ul>
+</section>
+
+<section id="skills">
+    <h2>Навички</h2>
+    <ul>
+        <li>Python</li>
+        <li>Flask</li>
+        <li>JavaScript</li>
+        <li>HTML/CSS</li>
+        <li>Java</li>
+    </ul>
+</section>
+
+<section id="experience">
+    <h2>Досвід роботи</h2>
+    <ul>
+        <li>веб-сайт резюме</li>
+    </ul>
+</section>
+{% endblock %}
