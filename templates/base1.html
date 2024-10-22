@@ -4,17 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Резюме{% endblock %}</title>
-
-    <!-- Підключення Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    <!-- Підключення вашого CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <header>
         <nav>
-            <!-- Ваше навігаційне меню -->
             <ul class="nav">
                 <li class="nav-item"><a class="nav-link" href="#about">Про себе</a></li>
                 <li class="nav-item"><a class="nav-link" href="#education">Освіта</a></li>
@@ -28,8 +23,6 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer>
-        <p>© 2024 Вікторія Кравецька</p>
-    </footer>
+    {% include 'footer.html' %}
 </body>
 </html>
